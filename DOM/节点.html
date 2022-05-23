@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div  id="box">
+        <div>ggg</div>
+        <p id="box1">hh</p>
+        <p>gg</p>
+    </div>
+
+    <script>
+        let box = document.getElementById('box');
+        let box2 = document.getElementById('box1')
+        //所有子节点
+        console.log(box.childNodes)
+        // 所有的元素子节点
+        console.log(box.children)
+        // 获取第一个元素子节点
+        console.log(box.firstElementChild)
+        // 获取第一个子节点
+        console.log(box.firstChild)
+        // 前一个兄弟可能是空白节点
+
+        // 前一个兄弟节点
+       console.log(box2.previousSibling)
+        // 后一个兄弟节点
+        console.log(box2.nextSibling)
+
+        // 前一个元素兄弟节点
+        console.log(box2.previousElementSibling)
+        // .....
+    </script>
+</body>
+</html>
+
+<!-- 
+前端：HTML + CSS + JavaScript + Bootstrap + Jquery + Ajax
+
+后端：
+
+Maven：Java的一个包管理工具（类似于前端的npm）
+Spring：Java对象管理的一个框架，提供了很多编程模式
+Servlet：Java里面用于处理请求的一个对象容器（常用于 Tomcat这个服务器里）
+JSP：Java的一个模板引擎，相当于Servlet的封装，一个JSP文件相当于一个Servlet类（虽然看起来像HTML）
+SpringMVC：封装了 Servlet，使编写和接受请求更容易
+Spring Boot：简化Spring的各种配置，简化Spring项目搭建的流程（核心：约定大于配置）
+MySQL：关系型数据库
+Hibernate：数据库操作的一个ORM框架，下面的那个Jpa其实是由Hibernate延申出来的一个简化版的标准
+Jpa：数据库操作相关，ORM类型
+Schedule定时任务
+Redis：缓存数据库(键值对类型)
+Spring Security：安全、权限验证相关框架
+POI：处理Office等文件的Java库，常用于 Excel
+
+
+ -->

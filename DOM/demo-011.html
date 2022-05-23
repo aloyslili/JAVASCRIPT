@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 创建节点 -->
+    <div id="box">
+        <div>你好啊</div>
+        <div>你好啊啊</div>
+        <div>你好</div>
+    </div>
+
+    <script>
+        let box2 = document.getElementById('box');
+        let boxb =document.getElementsByTagName('div');
+        
+        // 创建一个节点
+        let div1 = document.createElement('div');
+        // 把它挂在box上
+        div1.innerText ="我是新来的";
+        box2.insertBefore(div1, boxb[0]) 
+    </script>
+</body>
+</html>

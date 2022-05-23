@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">点我添加li标签</button>
+    <ul id="ul"></ul>
+
+    <script>
+        let btn = document.getElementById('btn');
+        let ul = document.getElementById('ul');
+        let lis = ul.getElementsByTagName('li');
+
+        // 写一个点击事件
+        btn.onclick = function() {
+            // 创建一个li标签
+            let liss = document.createElement('li');
+            // 给li标签赋值
+            liss.innerHTML = '我是li';
+
+            // 把li标签挂上树
+            ul.appendChild(liss);
+            // 点击li时候字体变红色
+        liss.onclick = function () {
+            this.style.color = 'red';
+        }
+        }
+ 
+    </script>
+</body>
+</html>

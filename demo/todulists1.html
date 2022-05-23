@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>
+      <input type="text" id="add_list" name="add_list" placeholder="type here" required />
+      <button>add</button>
+    </div>
+
+    <!-- 在这里添加内容 -->
+    <ul id="lists">
+      <!-- <li>
+					<input type="checkbox" name="" id="" value="" />
+					<span>学习</span>
+					<button>删除</button>
+				</li> -->
+    </ul>
+    <script>
+      let lists = document.getElementById("lists");
+
+      function content() {
+          let list = [
+              {id: 1, name: "学习", done: false},
+              {id: 2, name: "学习", done: false},
+              {id: 3, name: "学习", done: false},
+              {id: 4, name: "学习", done: false},
+          ]
+          for(i = 0; i <=list.lenght; i++) {
+              
+          }
+      }
+      function del() {
+          this.parentElenet.remove();
+      }
+
+    </script>
+  </body>
+</html>
