@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 函数的参数也可以使用解构赋值 -->
+    <script>
+         function add([x, y]) {
+        return x+y;
+    }
+    add([1,2]); //3
+    // 函数的参数表面上是一个数组，但在传入参数的哪一个，数组参数就被解构成x和y
+    </script>
+</body>
+</html>
