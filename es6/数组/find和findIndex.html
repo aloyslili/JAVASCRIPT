@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        find方法用于找出第一个符合条件的数组成员，他的参数是一个会第哦啊函数
+        所有数组组成的成员依次执行该回调函数，直到找到第一返回值为true的成员
+        然后返回该成员 
+
+        findIndex方法和find方法相似，用于返回第一个符合条件的数组成员的位置，
+        如果都不符合，则返回-1
+     -->
+     <script>
+        //  从数组中找出第一个小于0的成员
+         console.log([1, 2, 3, -5, -9].find((n)=>n<0));
+     </script>
+</body>
+</html>
