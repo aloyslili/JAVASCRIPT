@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+
+  <div>nihaoa</div>
+  <div>hahahah</div>
+  <!--
+    Array.isArray 检查类型
+   -->
+   <script>
+    // 数组变成字符串
+    // String()
+    // 字符串连接 String.jion(' ')
+    console.log([1, 2, 3].toString());
+
+
+    // 字符串变成数组.split(",")拆开成数组
+    // jion
+    // Array.from(str),会有第二个参数，第二个参数会对一个参数进行操作
+
+    let str = "hhhh";
+    console.log(Array.from(str));
+
+
+    let divs =  document.querySelectorAll("div");
+    console.log(
+      Array.from(divs,function(item){
+        console.log(item.innerHTNL);
+      })
+    )
+   </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!-- symble用来标识一个唯一表示 -->
+  <script>
+    // symble也可以按名字命名
+    // 描述一样，也表示为不同的值
+    // symble不能转换为字符串
+    // symble可以作为对象的隐藏属性
+    // symble解决字符串耦合
+
+    let user1 = {
+      name: "张三",
+      key: Symbol()
+    };
+    let user2 = {
+      name: "李四",
+      key: Symbol()
+    };
+    console.log(user1.key)
+  </script>
+
+</body>
+</html>

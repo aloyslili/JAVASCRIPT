@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!--
+    keys 获取键值对
+    values 获取值
+    entries获取键值对
+    for of 循环
+   -->
+   <script>
+    let arr = new Map([["jk", "你好啊"], ["hjjhjhk", "混合"]]);
+    arr.set("name", "李四")
+    // for(const [key, value] of arr.entries()){
+    //   console.log(key, value);
+    // }
+
+
+    // foreach遍历
+    arr.forEach((value,key) => {
+      console.log(value, key);
+    })
+   </script>
+</body>
+</html>

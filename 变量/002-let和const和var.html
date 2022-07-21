@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!--
+    let 和 const 必须先声明在使用
+   -->
+   <script>
+     // 变量提升
+     console.log(b) //b is Undefine
+    var b = "A";
+    //其实就是var b;
+    // b = "A";
+    // 把var b提升到console之前
+
+    // const定义的变量不能修改
+    // 常量的定义
+    // 不能改变内存地址
+
+    // 在函数中是可以访问外部全局的变量
+    // 在函数内部不声明变量，就是全局的，随都可以访问
+    var  q = "nihaoa";
+    function show() {
+      q = "hh"
+      // 声明之后就是局部的
+      console.log(q);
+    }
+    show();
+   </script>
+</body>
+</html>

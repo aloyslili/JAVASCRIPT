@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="https://cdn.bootcdn.net/ajax/libs/ramda/0.28.0/ramda.js"></script>
+</head>
+<body>
+<script>
+  const duplicate = n => [n*n, n+n, n/n];
+  let result = R.chain(duplicate, [1, 2, 3]);
+
+  console.log(result)
+
+</script>
+</body>
+</html>

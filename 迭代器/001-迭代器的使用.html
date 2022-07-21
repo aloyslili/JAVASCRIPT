@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <!--
+    iterator
+    key: 迭代的，是索引
+    value：返回的是值
+    .next 结果返回的是false表示还有，没有迭代完；返回ture是迭代完了
+    entrues也是一个可迭代对象
+    for of也是一个可迭代对象
+    every编译要全部为真返回
+    some有一个为真就行了
+    filter过滤 有必要的东西过滤出来，不必要的过滤走
+   -->
+    <script>
+      let lessons = [
+        {les: "css"},
+        {les: "css"},
+        {les: "c++"}
+   ];
+   const cssles = lessons.filter(function(lesson) {
+    return lesson["les"] == "css";
+   })
+   console.log(cssles);
+    </script>
+</body>
+</html>

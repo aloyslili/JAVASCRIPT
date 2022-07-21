@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 查找元素值就会返回元素的索引值indeOf 找不到返回-1
+    // includes查找返回的是bool类型
+
+    // find 遍历查找元素 参数可以是一个函数 找到的是值，找到就返回值
+    // let arr = [1, 2, 3, 4, 5];
+    //  arr.find(function(item){
+    //     console.log(item);
+    //  })
+
+    //  findindex返回的是索引值
+
+    // 自定义查找
+    function find(array, call) {
+      for(let value of array) {
+        if(call(value)) {
+          return value;
+        }
+      }
+      return undefined;
+    }
+
+    let arr = [1, 2, 3, 4];
+    console.log(find(arr, function(item) {
+      return item == 2;
+    }))
+  </script>
+</body>
+</html>

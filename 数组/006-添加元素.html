@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    let array = ["hello", "word"];
+    // 按索引位置添加值
+    // 可以通过数组的长度添加
+    array[array.length] = "!";
+    console.log(array);
+
+    // 通过push添加
+    array.push("shop")
+    console.log(array)
+
+    // 两个数组合并
+    let arr = ["go","shop"];
+     console.log(array.push(...arr))
+     console.log(array)
+  </script>
+</body>
+</html>
