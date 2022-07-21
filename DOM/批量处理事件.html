@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="ul">
+        <li>学习</li>
+        <li>学习</li>
+        <li>学习</li>
+        <li>学习</li>
+        <li>学习</li>
+        <li>学习</li>
+    </ul>
+
+    <script>
+        let uls = document.getElementById('ul');
+        let lis = ul.getElementsByTagName('li');
+        console.log(lis);
+        
+        for(i=0; i<=lis.lenght; i++) {
+            lis[i].onclick = function() {
+                this.style.color = 'red';
+                console.log('hh');
+            }
+        }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            width: 400px;
+            height: 200px;
+            background-color: red;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <button id="btn">点我弹出一个div</button>
+    <div id="box"></div>
+
+    <script>
+        let btn = document.getElementById('btn');
+        let box = document.getElementById('box');
+
+        // 设置点击事件
+        btn.onclick = function(e){
+            // 阻止事件传播到docuemnt身上
+            e.stopPropagation();
+            // 显示div
+            box.style.display = 'block';
+            console.log('nihao')
+        }
+        // 点击页面任何地方div不显示
+        document.onclick = function() {
+            box.style.display = 'none'
+        }
+
+        // 点击div本身时，div不会关闭，阻止冒泡
+        box.onclick = function(e) {
+            // 阻止事件传播到document身上
+            e.stopPropagation();
+            console.log(document)
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!-- 
+    按照一定模式从数组和对象中提取，然后对变量进行赋值，这称为解构
+ -->
+
+ <script>
+    //  变量直接赋值
+    let a= 1;
+    let b =2;
+    let c = 3;
+    console.log(a,b,c)
+
+    // 可以这么写，从数组中提取值，按照对应位置对变量赋值 也可以叫做匹配模式
+    let[i, o, p] = [1,2,3]
+    console.log(i,o,p)
+    // 结果都一样
+
+    // 嵌套数组进行解构 
+    let [apple,[[orange],banana]] = [1,[[2],3]]
+    console.log(apple,orange,banana)
+
+    let [, , third] = [1, 2, 3]
+    console.log(third)
+
+    let [head, ...tail] = [1,2,3]
+    console.log(head)
+    console.log(tail)
+
+    // let [a, [b], d] = [1, [2, 3], 4]; 会报错
+
+    // 解构赋值允许指定默认值 
+    let [x, y=10] =[1];
+    console.log(x,y)
+
+
+    let [h=1] =[undefined];
+    let [j=0]=[null];
+    console.log(h,j) //h=1,j=null
+    // 一个数组成员是null，默认值就不会生效，因为null不严格等于undefined
+    
+ </script>

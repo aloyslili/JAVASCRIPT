@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 用于将类似于数组对象转换成正真的数组 -->
+    <script>
+        let lists = {
+            'q': "1",
+            's': '2',
+            'd': '3',
+            length: 3 
+        }
+
+        let arrs = Array.from(lists)
+        console.log(arrs)
+    </script>
+</body>
+</html>

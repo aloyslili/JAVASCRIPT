@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="ul">
+        <li>学习</li>
+        <li>学习中</li>
+        <li>好好学习中</li>
+    </ul>
+    <div id="box">
+
+    </div>
+    <script>
+        let ul = document.getElementById('ul');
+        let lis = ul.getElementsByTagName('li')[0];
+        let box = document.getElementById('box');
+
+        var new_ul = lis.cloneNode(true);
+        box.appendChild(new_ul);
+    </script>
+</body>
+</html>

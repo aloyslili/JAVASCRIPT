@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        padding: 0px;
+        margin: 0px;
+      }
+
+      div {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box"></div>
+
+    <script>
+      //    获取元素
+      let box = document.getElementById("box");
+      //    鼠标点击事件
+      box.onmousedown = function (ev) {
+        let evs = ev || event;
+
+        //    获取盒子的位置
+        //求出鼠标和box的位置差值
+		//clientX返回当事件被触发时，鼠标指针的水平坐标。
+		//clientY返回当事件被触发时，鼠标指针的垂直坐标。
+        let x1 = evs.clientX - box.offsetLeft;
+        let y1 = evs.clientY - box.offsetTop;
+
+        // 鼠标移动事件
+        //把事件加在document上，解决因为鼠标移动太快时，
+		//鼠标超过box后就没有了拖拽的效果的问题
+        document.onmousemove = function (el) {
+          let els = el || window.event;
+          let x2 = els.clientX - x1;
+          let y2 = els.clientY - y1;
+          if(x2 < 0) 
+		  	{
+		  		x2 = 0;
+		  	} 
+		  	//保证不超过浏览器右边边框
+		  	else if(x2 > document.documentElement.clientWidth - box.offsetWidth)
+		  	{
+  				x2 = document.documentElement.clientWidth - box.offsetWidth;
+  			}
+		  	if(y2 < 0) 
+		  	{
+		  		y2 = 0;
+		  	}
+		  	//保证浏览器不超过下边边框
+		  	else if(y2 > document.documentElement.clientHeight - box.offsetHeight)
+		  	{
+		  		y2 = document.documentElement.clientHeight - box.offsetHeight;
+		  	}
+          box.style.top = y2- y1 + "px";
+          box.style.left = x2 - x1 + "px";
+        };
+        //鼠标抬起的函数
+	 	document.onmouseup = function()
+	 	{
+	  	document.onmousemove = null;
+	  	document.onmouseup = null;
+ 		}
+      };
+
+      //   鼠标离开事件
+      document.onmouseup = function () {
+          document.onmouseup = null;
+      };
+    </script>
+  </body>
+</html>

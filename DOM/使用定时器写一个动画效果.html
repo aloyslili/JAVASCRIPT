@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #box {
+        width: 200px;
+        height: 200px;
+        background-color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box"></div>
+    <button id="btn">点我div动起来</button>
+
+    <script>
+      let box = document.getElementById("box");
+      let btn = document.getElementById("btn");
+
+      // 全局变量的值 存放div 的 left的位置
+      let left = 100;
+      btn.onclick = function () {
+        // 指定一个计时器
+        let timer = setInterval(function () {
+          left += 20;
+          if (left > 1000) {
+            // 清除计时器
+            clearInterval(timer);
+          }
+          box.style.left = left + "px";
+        }, 20);
+      };
+    </script>
+  </body>
+</html>

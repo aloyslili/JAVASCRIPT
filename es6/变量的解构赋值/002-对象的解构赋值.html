@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 对象的属性没有次序，变量必须与属性名同名才能取到值
+        let{a,s} ={a:'1',s:'2'};
+        console.log(a,s) //1 2
+
+        let{q,w} ={q:'1',s:'2'};
+        console.log(q, w); //w没有取到值 undefined
+
+
+        // 对象的解构赋值的内部机制是先找到同名属性，然后再赋值给对应的变量，真正被赋值的是后者，而不是前者
+        let {x:y}={x:'1',z:'9'}
+        console.log(y)
+        // x is not defined , y = 1;
+        // y才是真正的变量，x是匹配模式
+
+
+        // 解构也可以用于嵌套解构
+        // let obj ={
+        //     p: [
+        //         'Hello',
+        //         {g:'world'}
+        //     ]
+        // }
+        // console.log(obj)
+        // let {t:[u,{i}]} = obj;
+        // console.log(u,i)
+
+
+        // 对象的解构也可以有默认值的
+            let {xx,yy=6} = {xx:1}
+            console.log(xx,yy) ///xx=1, yy=6
+
+        // 对象的属性严格值是undefined
+        let {qq = 3} ={qq: undefined}
+        console.log(qq) //qq =3
+
+        let {qqq = 3} ={qqq: null}
+        console.log(qq) //qqq =null  默认值不会生效
+           
+    </script>
+</body>
+</html>

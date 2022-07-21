@@ -1,0 +1,42 @@
+<script>
+  // let用于声明变量，和var类似，但是所声明的变量只在
+  // 代码块内有效
+  //   var 在全局中都有效
+  {
+    let a = 10;
+    var b = 20;
+  }
+
+  //   console.log(a)a is not defined.
+  console.log(b); // 20
+
+  for(var i = 0; i<3; i++) {
+      let i ='asd';
+      console.log(i)
+
+  }//asd asd asd 输出三次asd
+
+//  var 存在变量提升现象，即变量可以在定义之前使用，值式undefied
+// let在定义变量之前使用，会报错ReferenceError
+
+// console.log(d);
+// let a=10;
+
+console.log(c)
+var c =90;
+// 只要块级作用域内存在let命令，它所声明的变量就绑定这个区域，不再受外部影响
+
+// 不允许在相同作用域内重复声明一个变量
+// 不能在函数内部重新声明参数
+
+{{{{
+{let insane = ' Hello World '} 
+console.log(insane); //报错 外层作用域无法读取内层作用域的变量
+}}}}; 
+
+
+{{{{
+    let g = "hhh";
+    {let g = "hhh";}
+}}}}
+</script>

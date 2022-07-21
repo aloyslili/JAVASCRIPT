@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #content {
+            width: 400px;
+            height: 500px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid red;
+        }
+
+        #search, #container {
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        #buttom {
+            margin-top: 200px;
+            width: 400px;
+            height: 100px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            border: 1px solid red;
+            display: flex;
+        }
+
+        #buttom div{
+            justify-content: space-between;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+       <div id="search">
+        <input type="text" name="" id="input" placeholder="睡什么睡学习啊"><button id="btn" onclick="add">添加</button>
+       </div>
+        <div id="container">
+            <div>
+                <input type="checkbox" ><span>敲代码</span><button onclick="delLists">删除</button>
+            </div>
+            <div>
+                <input type="checkbox" ><span>敲代码</span><button onclick="delLists">删除</button>
+            </div>
+            <div>
+                <input type="checkbox" ><span>敲代码</span><button onclick="delLists">删除</button>
+            </div>
+        </div>
+        <div id="buttom">
+            <div><span>全选</span><input type="checkbox" name="" id=""></div>
+            <div><span>全不选</span><input type="checkbox" name="" id=""></div>
+            <div><span>未选</span></div>
+        </div>
+    </div>
+
+
+    <script>
+        let lists = document.getElementById('container');
+        let input = document.getElementById('input');
+        function delLists(self) {
+            // 更具父节点，删除子节点
+            lists.removeChild(self);
+        }
+
+    function add() {
+        let input= document.getElementById("input");
+        if(input.value.trim() == ''){
+            alert("输入的内容不能为空")
+        }else {
+            input.value.appenchilde(lists);
+        }
+    }
+    </script>
+</body>
+</html>

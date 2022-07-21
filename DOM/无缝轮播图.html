@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #box {
+        width: 400px;
+        height: 50px;
+        margin: 0 auto;
+        border: 1px solid red;
+        overflow: hidden;
+      }
+      #list {
+        list-style: none;
+      }
+      #list li {
+        margin-top: -18px;
+        margin-left: 10px;
+        width: 50px;
+        height: 50px;
+        border: 1px solid red;
+        float: left;
+      }
+
+      #list li:nth-child(2n-1) {
+        background-color: rebeccapurple;
+      }
+
+      #list li:nth-child(2n) {
+        background-color: gold;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box">
+      <ul id="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+      </ul>
+    </div>
+
+    <script>
+      //  获取box
+      let box = document.getElementById("box");
+      // 获取list
+      let list = document.getElementById("list");
+      // 复制一份所有的li
+      list.innerHTML += list.innerHTML;
+      // 设置一个全局变量存放box的left的值
+      let left = 0;
+      // 设置定时器
+      let timer;
+
+      // 封装一个移动函数
+      function remove() {
+        // 设置一个开关，放置动画积累,清除定时器
+        setInterval(timer);
+
+        // 调用remove函数
+        remove();
+        // 设置定时器
+        timer = setInterval(function () {
+          left -= 4;
+          // 验收
+          if (left <= -250) {
+            left = 0;
+          }
+          list.style.left = left + "px";
+        }, 20);
+      }
+
+       // 鼠标进入停止定时器
+       box.onmouseenter = function () {
+            clearInterval(timer);
+        };
+
+        // 鼠标离开继续定时器，鼠标离开时，计时器继续工作
+        box.onmouseleave = function () {
+            remove();
+        };
+    </script>
+  </body>
+</html>

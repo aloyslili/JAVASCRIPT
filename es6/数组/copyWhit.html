@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        copyWithin方法会在当前数组内部将指定位置的成员复制到其他位置（会覆盖原有成员）
+        然后返回当前数组
+        他接受三个参数
+        第一个参数：（必选）从该位置开始替换数据
+        第二个参数：（可选）从该位置开始读取数据
+        第三个参数：（可选）到该位置停止读取数据
+     -->
+     <script>
+         let lists = [1, 2, 3, 4, 5].copyWithin(0,3);
+         console.log(lists);
+        //  表示从3号位置直到数组结束位置的成员复制到0号位置开始的成员
+        // 包括左边的值不包括右边的值
+     </script>
+</body>
+</html>

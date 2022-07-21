@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #box {
+            height: 5000px;
+            width: auto;
+            background-color: rgb(110, 41, 41);
+        }
+        
+        .btn {
+            top: 4000px;
+        }
+    </style>
+</head>
+<body>
+    <div id="box">
+
+    </div>
+
+        <button id="btn">按钮</button>
+    <script>
+        let btn = document.getElementById('btn');
+        let timer;
+        btn.onclick = function() {
+            // 设置开关
+            cearInterval(timer);
+            timer = setInterval(function() {
+                // 不断让scrolltop减少
+                document.documentElement,screenTop -= 800;
+                if ( document.documentElement,screenTop <= 0) 
+                 {cearInterval(timer);}
+            },20)
+        }
+    </script>
+</body>
+</html>

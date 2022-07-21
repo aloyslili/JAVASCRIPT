@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #todo-list {
+        list-style: none;
+        padding-left: 0;
+      }
+      .done {
+        color: #ccc;
+        text-decoration: line-through;
+      }
+    </style>
+  </head>
+  <body>
+    <input type="text" id="todo-input" />
+    <button id="add-btn">添加</button>
+    <ul id="todo-list"></ul>
+
+    <script src="./StorageHelper.js"></script>
+    <script>
+      // 通过getelementById获取input元素
+      let todoInput = document.getElementById("todo-input");
+      let addBtn = document.getElementById("add-btn");
+      let todoList = document.getElementById("todo-list");
+      // 存放todolists事项
+      let todos = [];
+      // new一个StorageHelper构造函数
+      let storageHelper = new StorageHelper("todos");
+
+      // 页面刚加载的时候，读取 localStorage，看有没有存过数据
+      window.onload = function () {
+        todos = storageHelper.load() || [];
+        renderTodos(); // 读取完了再渲染
+      };
+
+      // 当点击添加按钮的时候
+      addBtn.onclick = function () {
+        if (todoInput.value) {
+          todos.push({ id: Date.now(), name: todoInput.value, done: false });
+          renderTodos(); // 重新刷新列表
+          todoInput.value = ""; // 添加完之后清空输入框
+          storageHelper.save(todos); //在浏览器存放todo
+        } else {
+          // todoInput等于空时
+          alert("请先输入内容");
+        }
+      };
+
+      // 渲染todos数组到列表中
+      function renderTodos() {
+        todoList.innerHTML = ""; // 清空旧的列表内容
+        for (let i = 0; i < todos.length; i++) {
+          let li = document.createElement("li");
+          let checkbox = document.createElement("input");
+          checkbox.type = "checkbox";
+          li.appendChild(checkbox);
+          li.innerHTML += todos[i].name;
+          li.setAttribute("data-id", todos[i].id);
+          if (todos[i].done) {
+            li.firstElementChild.checked = "checked";
+            li.classList.add("done");
+          }
+          todoList.appendChild(li);
+        }
+        // 给复选框添加事件
+        let checkeboxList = todoList.querySelectorAll('input[type="checkbox"]');
+        for (let i = 0; i < checkeboxList.length; i++) {
+          let cb = checkeboxList[i];
+          cb.onclick = function () {
+            let parent = cb.parentElement;
+            let isChecked = cb.checked;
+            let todoId = parent.getAttribute("data-id");
+            let todoItem = todos.filter((item) => item.id == todoId)[0];
+            if (isChecked) {
+              parent.classList.add("done");
+              todoItem.done = true;
+            } else {
+              parent.classList.remove("done");
+              todoItem.done = false;
+            }
+            // 每次发生改动，存储todos到localStorage
+            storageHelper.save(todos);
+          };
+        }
+      }
+    </script>
+  </body>
+</html>
