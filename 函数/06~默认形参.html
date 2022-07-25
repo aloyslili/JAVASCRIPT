@@ -7,14 +7,13 @@
   <title>Document</title>
 </head>
 <body>
-  <!-- ...arr -->
   <script>
-    let arr = ["1", "2"];
-    let arr1 = ["a", "b"];
-    arr = [...arr, ...arr1];
-    console.log(arr);
-    // 收和放
-    // 结构赋值
+    function avg(total, year) {
+      // year有值就取值，没有值就取1
+      year = year || 1;
+      return Math.round(total / year);
+    }
+    console.log(avg(200))
   </script>
 </body>
 </html>

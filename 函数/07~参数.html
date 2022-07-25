@@ -7,14 +7,15 @@
   <title>Document</title>
 </head>
 <body>
-  <!-- ...arr -->
+  <!-- 一个函数可以作为一个函数的参数 也就是会回调函数 -->
+
   <script>
-    let arr = ["1", "2"];
-    let arr1 = ["a", "b"];
-    arr = [...arr, ...arr1];
-    console.log(arr);
-    // 收和放
-    // 结构赋值
+    var i = 0;
+    function cms() {
+      console.log(++i);
+    }
+    setInterval(cms, 1000);
+    // argument扩展运算符
   </script>
 </body>
 </html>

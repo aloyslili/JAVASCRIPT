@@ -7,14 +7,15 @@
   <title>Document</title>
 </head>
 <body>
-  <!-- ...arr -->
   <script>
-    let arr = ["1", "2"];
-    let arr1 = ["a", "b"];
-    arr = [...arr, ...arr1];
-    console.log(arr);
-    // 收和放
-    // 结构赋值
+    function fun(){
+      console.log("nihaoa");
+    }
+    // 调用函数
+    // fun();
+    // 用let的使用就不能用window
+    window.fun();
+    console.log(window.screenX);
   </script>
 </body>
 </html>

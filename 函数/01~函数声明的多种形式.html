@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    // 可以把函数看成是一个值，赋给一个变量
+    // let func = new Function("title","console.log(title)");
+    // func();
+
+    // 直接写函数式声明
+    // function fun(a) {
+    //   console.log(a)
+    // }
+    // fun("你好啊");
+
+    // let ljy = function(b) {
+    //   console.log(b);
+    // }
+    // ljy("李婧阳");
+
+    // 函数也可以是一个对象
+    let user = {
+      name: null,
+      setUsername: function(name) {
+        return this.name;
+      },
+      getUsername: function(name) {
+        return this.name;
+      }
+    };
+    // console.log(object);
+    user.setUsername("冷静啊");
+    console.log(user.getUsername())
+  </script>
+</body>
+</html>
